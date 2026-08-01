@@ -138,6 +138,41 @@ function renderLightbox() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.chip-group').forEach((group) => {
+    const max = parseInt(group.dataset.max || '99', 10);
+    group.querySelectorAll('.chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const selectedInGroup = [...group.querySelectorAll('.chip.selected')];
+        if (chip.classList.contains('selected')) {
+          chip.classList.remove('selected');
+        } else {
+          if (max === 1) {
+            selectedInGroup.forEach((c) => c.classList.remove('selected'));
+          } else if (selectedInGroup.length >= max) {
+            selectedInGroup[0].classList.remove('selected');
+          }
+          chip.classList.add('selected');
+          chip.classList.remove('ai-suggested');
+        }
+      });
+    });
+  });
+});
+
+// --- "Über mich"-Vorschlag: Regenerieren ---
+const aboutMeSuggestions = [
+  "Kochen mit zu lauter Musik, tiefe Balkongespräche und die Überzeugung, dass jede Reise mit zu viel Gepäck beginnt — das bin so ziemlich ich.",
+  "Ich glaube an ehrliche Gespräche, spontane Ausflüge und daran, dass man auch mit 29 noch nicht alles wissen muss.",
+  "Zwischen Yoga-Matte und Kochtopf zu Hause, am liebsten mit Musik, die zu laut für die Nachbarn ist."
+];
+let aboutMeIndex = 0;
+function regenerateAboutMe() {
+  aboutMeIndex = (aboutMeIndex + 1) % aboutMeSuggestions.length;
+  const field = document.getElementById('aboutMeText');
+  if (field) field.value = aboutMeSuggestions[aboutMeIndex];
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   const lb = document.getElementById('lightbox');
   if (!lb) return;
   lb.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });

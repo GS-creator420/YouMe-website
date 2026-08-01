@@ -246,7 +246,45 @@ a { color: inherit; text-decoration: none; }
 .legal-card h2 { font-size: 18px; margin: 32px 0 10px; }
 .legal-card p, .legal-card li { color: var(--text-secondary); font-size: 14.5px; line-height: 1.7; }
 
-/* ---------- Footer ---------- */
+/* ---------- Chip select (reused: gender, interests, communities, etc.) ---------- */
+.chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border);
+  font-size: 13px; color: var(--text-secondary); cursor: pointer; user-select: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.chip:hover { border-color: var(--border-muted); }
+.chip.selected { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.ai-suggested { border-color: var(--accent); color: var(--accent); }
+.chip.ai-suggested::before { content: '✨ '; }
+.chip.ai-suggested.selected::before { content: ''; }
+
+/* ---------- Profil-Einrichten ---------- */
+.setup-shell { padding: 48px 24px 90px; }
+.setup-card { max-width: 620px; margin: 0 auto; }
+.setup-card > .intro { margin-bottom: 34px; }
+.setup-card > .intro h1 { font-size: 28px; margin-bottom: 8px; }
+.setup-card > .intro p { color: var(--text-secondary); font-size: 14px; }
+.setup-section {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 26px 28px; margin-bottom: 20px;
+}
+.setup-section h2 { font-size: 16px; margin-bottom: 4px; }
+.setup-section .hint { color: var(--text-muted); font-size: 12.5px; margin-bottom: 18px; }
+.setup-section textarea {
+  width: 100%; min-height: 100px; padding: 14px; border-radius: 12px; border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 14px;
+  resize: vertical;
+}
+.ai-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+.setup-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 520px) { .setup-row { grid-template-columns: 1fr; } }
+.setup-section select, .setup-section input[type=text], .setup-section input[type=number] {
+  width: 100%; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03); color: var(--text-primary); font-family: 'Inter', sans-serif; font-size: 13.5px;
+}
+.setup-section label.small { display: block; font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; margin-top: 12px; }
+.setup-section label.small:first-child { margin-top: 0; }
 footer { border-top: 1px solid var(--border); padding: 40px 0; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; }
 footer .links { display: flex; gap: 22px; font-size: 13px; color: var(--text-muted); }

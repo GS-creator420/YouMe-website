@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil vervollständigen – YouMe</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">You<span>Me</span></a>
+  </div>
+</nav>
+
+<div class="setup-shell">
+  <div class="setup-card">
+
+    <div class="intro">
+      <h1>Fast geschafft</h1>
+      <p>Ein paar letzte Angaben, dann ist dein Profil fertig. Alles außer der Prompt-Frage ist optional
+        — aber je mehr du ausfüllst, desto genauer wird dein Kompatibilitäts-Score.</p>
+    </div>
+
+    <!-- Wonach ich suche -->
+    <div class="setup-section">
+      <h2>Wonach du suchst</h2>
+      <p class="hint">Wähle eine Option.</p>
+      <div class="chip-group" data-max="1">
+        <span class="chip" data-value="freundschaft">Freundschaft</span>
+        <span class="chip selected" data-value="beziehung">Ernsthafte Beziehung</span>
+      </div>
+    </div>
+
+    <!-- Über mich Prompt -->
+    <div class="setup-section">
+      <h2>Dein Prompt: „Ein Abend, der wirklich nach mir schmeckt, sieht so aus …"</h2>
+      <p class="hint">Von der KI basierend auf deinem Quiz vorgeschlagen — übernehmen, bearbeiten oder neu generieren.</p>
+      <span class="ai-tag">✨ KI-Vorschlag, basierend auf deinen Antworten</span>
+      <textarea id="aboutMeText">Kochen mit zu lauter Musik, tiefe Balkongespräche und die Überzeugung, dass jede Reise mit zu viel Gepäck beginnt — das bin so ziemlich ich.</textarea>
+      <div style="margin-top:12px;">
+        <button type="button" class="btn btn-ghost" onclick="regenerateAboutMe()">✨ Anderen Vorschlag generieren</button>
+      </div>
+    </div>
+
+    <!-- Freizeit & Interessen -->
+    <div class="setup-section">
+      <h2>Freizeit & Interessen</h2>
+      <p class="hint">Einige Vorschläge (✨) basieren auf deinem Quiz — passe sie gern an.</p>
+      <div class="chip-group" data-max="99">
+        <span class="chip ai-suggested selected" data-value="kochen">Kochen</span>
+        <span class="chip" data-value="sport">Sport</span>
+        <span class="chip ai-suggested selected" data-value="reisen">Reisen</span>
+        <span class="chip" data-value="kreativitaet">Kreativität</span>
+        <span class="chip" data-value="wellness">Wellness</span>
+        <span class="chip" data-value="selfmade">Selfmade / eigene Projekte</span>
+        <span class="chip" data-value="ausgehen">Ausgehen</span>
+        <span class="chip" data-value="filme">Filme & Serien</span>
+        <span class="chip" data-value="lieblingsgerichte">Lieblingsgerichte</span>
+        <span class="chip ai-suggested selected" data-value="lesen">Lesen / Bücher</span>
+        <span class="chip" data-value="musik">Live-Musik</span>
+        <span class="chip" data-value="wandern">Wandern</span>
+      </div>
+    </div>
+
+    <!-- Communities & Initiativen -->
+    <div class="setup-section">
+      <h2>Communities & Initiativen</h2>
+      <p class="hint">Optional — zeig, wofür du stehst.</p>
+      <div class="chip-group" data-max="99">
+        <span class="chip" data-value="neurodivergent">Neurodivergent</span>
+        <span class="chip" data-value="umweltschutz">Umweltschutz</span>
+        <span class="chip" data-value="menschenrechte">Menschenrechte</span>
+        <span class="chip" data-value="lgbtq">LGBTQ+</span>
+        <span class="chip" data-value="ehrenamt">Ehrenamt</span>
+      </div>
+    </div>
+
+    <!-- Persönliche Angaben -->
+    <div class="setup-section">
+      <h2>Persönliche Angaben</h2>
+      <p class="hint">Alles optional, hilft anderen aber, dich besser einzuschätzen.</p>
+      <div class="setup-row">
+        <div>
+          <label class="small">Heimatort</label>
+          <input type="text" placeholder="z. B. Salzburg">
+        </div>
+        <div>
+          <label class="small">Wohnort</label>
+          <input type="text" placeholder="z. B. München">
+        </div>
+      </div>
+      <div class="setup-row">
+        <div>
+          <label class="small">Beruf</label>
+          <input type="text" placeholder="z. B. Ergotherapeutin">
+        </div>
+        <div>
+          <label class="small">Körpergröße</label>
+          <input type="number" placeholder="z. B. 172" min="120" max="230">
+        </div>
+      </div>
+      <div class="setup-row">
+        <div>
+          <label class="small">Sternzeichen</label>
+          <select>
+            <option>Bitte wählen</option>
+            <option>Widder</option><option>Stier</option><option>Zwillinge</option><option>Krebs</option>
+            <option>Löwe</option><option>Jungfrau</option><option>Waage</option><option>Skorpion</option>
+            <option>Schütze</option><option>Steinbock</option><option>Wassermann</option><option>Fische</option>
+          </select>
+        </div>
+        <div>
+          <label class="small">Religion</label>
+          <select>
+            <option>Bitte wählen</option>
+            <option>Keine</option><option>Christlich</option><option>Muslimisch</option>
+            <option>Jüdisch</option><option>Buddhistisch</option><option>Spirituell, undogmatisch</option>
+            <option>Andere</option>
+          </select>
+        </div>
+      </div>
+      <label class="small">Haustiere</label>
+      <div class="chip-group" data-max="99">
+        <span class="chip" data-value="hund">Hund</span>
+        <span class="chip" data-value="katze">Katze</span>
+        <span class="chip" data-value="keine">Keine</span>
+        <span class="chip" data-value="andere">Andere</span>
+      </div>
+    </div>
+
+    <!-- Lifestyle -->
+    <div class="setup-section">
+      <h2>Lifestyle</h2>
+      <div class="setup-row">
+        <div>
+          <label class="small">Alkohol</label>
+          <select>
+            <option>Bitte wählen</option>
+            <option>Gelegentlich</option><option>Regelmäßig</option><option>Nie</option>
+          </select>
+        </div>
+        <div>
+          <label class="small">Rauchen</label>
+          <select>
+            <option>Bitte wählen</option>
+            <option>Nie</option><option>Gelegentlich</option><option>Regelmäßig</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verlinkungen -->
+    <div class="setup-section">
+      <h2>Verlinkungen</h2>
+      <p class="hint">Optional — zeigt anderen einen weiteren Ausschnitt von dir.</p>
+      <label class="small">Spotify-Profil</label>
+      <input type="text" placeholder="open.spotify.com/user/...">
+      <label class="small">Instagram (optional sichtbar)</label>
+      <input type="text" placeholder="@dein.name">
+    </div>
+
+    <a href="profil.html" class="btn btn-accent btn-block">Profil abschließen</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
