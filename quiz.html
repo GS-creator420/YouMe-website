@@ -18,15 +18,16 @@
   <div class="quiz-card">
 
     <div class="quiz-progress-label">
-      <span>Kernfrage <span class="current">1</span> von 5</span>
-      <span>ca. 2 Min.</span>
+      <span>Kernfrage <span class="current">1</span> von 15</span>
+      <span>ca. 5 Min.</span>
     </div>
     <div class="progress-track"><div class="progress-fill"></div></div>
 
+    <!-- Werte & Lebensziele -->
     <div class="quiz-step active" data-step="q1">
       <h2>Was bringt dich in einer Beziehung am meisten zur Ruhe?</h2>
-      <p class="quiz-hint">Wähle bis zu 2.</p>
-      <div class="options" data-max="2">
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
         <div class="option" data-value="stabilitaet"><span>Stabilität & Verlässlichkeit</span><span class="box"></span></div>
         <div class="option" data-value="freiheit"><span>Freiheit & Spontaneität</span><span class="box"></span></div>
         <div class="option" data-value="gespraeche"><span>Tiefe Gespräche & Wachstum</span><span class="box"></span></div>
@@ -34,28 +35,144 @@
         <div class="option" data-value="zukunft"><span>Gemeinsame Zukunftspläne</span><span class="box"></span></div>
         <div class="option" data-value="individualitaet"><span>Raum für Individualität</span><span class="box"></span></div>
       </div>
-      <div class="quiz-actions">
-        <span></span>
-        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
-      </div>
+      <div class="quiz-actions"><span></span><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
     </div>
 
     <div class="quiz-step" data-step="q2">
+      <h2>Was ist dein größtes Zukunfts-Ziel gerade?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="karriere"><span>Beruflich wachsen</span><span class="box"></span></div>
+        <div class="option" data-value="familie"><span>Familie gründen</span><span class="box"></span></div>
+        <div class="option" data-value="reisen"><span>Die Welt sehen</span><span class="box"></span></div>
+        <div class="option" data-value="ruhe"><span>Innere Ruhe finden</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q3">
+      <h2>Wie wichtig ist dir ein gemeinsamer Kinderwunsch?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="ja"><span>Ja, klar — das ist mir wichtig</span><span class="box"></span></div>
+        <div class="option" data-value="vielleicht"><span>Vielleicht später, noch offen</span><span class="box"></span></div>
+        <div class="option" data-value="eher_nicht"><span>Eher nicht</span><span class="box"></span></div>
+        <div class="option" data-value="offen"><span>Völlig offen, kein Muss</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <!-- Bindungsstil & Nähe -->
+    <div class="quiz-step" data-step="q4">
+      <h2>Wie viel Nähe brauchst du im Alltag einer Beziehung?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="viel_zeit"><span>Viel gemeinsame Zeit</span><span class="box"></span></div>
+        <div class="option" data-value="ausgewogen"><span>Ein ausgewogener Mix</span><span class="box"></span></div>
+        <div class="option" data-value="freiraum"><span>Viel eigener Freiraum</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q5">
+      <h2>Was gibt dir am meisten Sicherheit in einer Beziehung?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="ehrlichkeit"><span>Ehrlichkeit, auch bei Unangenehmem</span><span class="box"></span></div>
+        <div class="option" data-value="verlaesslichkeit"><span>Verlässliche Absprachen</span><span class="box"></span></div>
+        <div class="option" data-value="naehe2"><span>Körperliche Nähe</span><span class="box"></span></div>
+        <div class="option" data-value="worte"><span>Worte der Bestätigung</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q6">
+      <h2>Was soll dein:e Wunschpartner:in auf jeden Fall mitbringen?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="bodenstaendig"><span>Bodenständig & verlässlich</span><span class="box"></span></div>
+        <div class="option" data-value="abenteuerlustig"><span>Abenteuerlustig & spontan</span><span class="box"></span></div>
+        <div class="option" data-value="reflektiert"><span>Nachdenklich & reflektiert</span><span class="box"></span></div>
+        <div class="option" data-value="verspielt"><span>Verspielt & humorvoll</span><span class="box"></span></div>
+        <div class="option" data-value="zielstrebig"><span>Zielstrebig, klare Vorstellungen</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <!-- Alltag & Lebensstil -->
+    <div class="quiz-step" data-step="q7">
+      <h2>Wie sieht dein Ideal-Wochenende aus?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="natur"><span>Raus in die Natur</span><span class="box"></span></div>
+        <div class="option" data-value="ausgehen"><span>Ausgehen, Leute treffen</span><span class="box"></span></div>
+        <div class="option" data-value="couch"><span>Couch, Film, Ruhe</span><span class="box"></span></div>
+        <div class="option" data-value="projekt"><span>An einem Projekt arbeiten</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q8">
+      <h2>Planst du lieber im Voraus oder eher spontan?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="plane"><span>Plane lieber im Voraus</span><span class="box"></span></div>
+        <div class="option" data-value="mix2"><span>Mix aus beidem</span><span class="box"></span></div>
+        <div class="option" data-value="spontan"><span>Bin spontan</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q9">
+      <h2>Wie wichtig ist dir ein gesunder Lebensstil (Sport, Ernährung)?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="sehr"><span>Sehr wichtig, fester Bestandteil</span><span class="box"></span></div>
+        <div class="option" data-value="etwas"><span>Ganz gut, aber kein Muss</span><span class="box"></span></div>
+        <div class="option" data-value="unwichtig"><span>Eher unwichtig</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <!-- Kommunikation & Konflikt -->
+    <div class="quiz-step" data-step="q10">
       <h2>Wie gehst du am liebsten in einen Streit — und wieder raus?</h2>
-      <p class="quiz-hint">Wähle bis zu 2.</p>
-      <div class="options" data-max="2">
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
         <div class="option" data-value="direkt"><span>Direkt ansprechen, sofort klären</span><span class="box"></span></div>
         <div class="option" data-value="abstand"><span>Erst kurz Abstand, dann reden</span><span class="box"></span></div>
         <div class="option" data-value="humor2"><span>Mit Humor die Spannung lösen</span><span class="box"></span></div>
         <div class="option" data-value="schriftlich"><span>Gedanken erst aufschreiben</span><span class="box"></span></div>
       </div>
-      <div class="quiz-actions">
-        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
-        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
-      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
     </div>
 
-    <div class="quiz-step" data-step="q3">
+    <div class="quiz-step" data-step="q11">
+      <h2>Wie zeigst du am liebsten Zuneigung?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="worte2"><span>Liebevolle Worte</span><span class="box"></span></div>
+        <div class="option" data-value="taten"><span>Kleine Taten & Gesten</span><span class="box"></span></div>
+        <div class="option" data-value="zeit"><span>Gemeinsame Zeit</span><span class="box"></span></div>
+        <div class="option" data-value="beruehrung"><span>Körperliche Nähe</span><span class="box"></span></div>
+        <div class="option" data-value="geschenke"><span>Kleine Geschenke</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <div class="quiz-step" data-step="q12">
+      <h2>Wie offen gehst du mit Gefühlen um?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="sehr_offen"><span>Sehr offen, spreche vieles direkt an</span><span class="box"></span></div>
+        <div class="option" data-value="teils"><span>Kommt auf die Situation an</span><span class="box"></span></div>
+        <div class="option" data-value="zurueckhaltend"><span>Eher zurückhaltend</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
+    </div>
+
+    <!-- Freizeit & Soziales -->
+    <div class="quiz-step" data-step="q13">
       <h2>Wie sehr lädst du dich in Gesellschaft von anderen auf?</h2>
       <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
       <div class="options" data-max="1">
@@ -63,49 +180,40 @@
         <div class="option" data-value="mix"><span>Ein gesunder Mix aus beidem</span><span class="box"></span></div>
         <div class="option" data-value="gesellschaft"><span>Ich blühe in Gesellschaft auf</span><span class="box"></span></div>
       </div>
-      <div class="quiz-actions">
-        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
-        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
-      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
     </div>
 
-    <div class="quiz-step" data-step="q4">
-      <h2>Was soll dein:e Wunschpartner:in auf jeden Fall mitbringen?</h2>
-      <p class="quiz-hint">Wähle bis zu 2.</p>
-      <div class="options" data-max="2">
-        <div class="option" data-value="bodenstaendig"><span>Bodenständig & verlässlich</span><span class="box"></span></div>
-        <div class="option" data-value="abenteuerlustig"><span>Abenteuerlustig & spontan</span><span class="box"></span></div>
-        <div class="option" data-value="reflektiert"><span>Nachdenklich & reflektiert</span><span class="box"></span></div>
-        <div class="option" data-value="verspielt"><span>Verspielt & humorvoll</span><span class="box"></span></div>
-        <div class="option" data-value="zielstrebig"><span>Zielstrebig, klare Vorstellungen</span><span class="box"></span></div>
+    <div class="quiz-step" data-step="q14">
+      <h2>Was machst du am liebsten in deiner Freizeit?</h2>
+      <p class="quiz-hint">Wähle bis zu 3.</p>
+      <div class="options" data-max="3">
+        <div class="option" data-value="sport2"><span>Sport & Bewegung</span><span class="box"></span></div>
+        <div class="option" data-value="kultur"><span>Kunst, Musik, Kultur</span><span class="box"></span></div>
+        <div class="option" data-value="kochen2"><span>Kochen & Genießen</span><span class="box"></span></div>
+        <div class="option" data-value="lesen2"><span>Lesen & Ruhe</span><span class="box"></span></div>
+        <div class="option" data-value="reisen2"><span>Reisen & Entdecken</span><span class="box"></span></div>
       </div>
-      <div class="quiz-actions">
-        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
-        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
-      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Weiter</button></div>
     </div>
 
-    <div class="quiz-step" data-step="q5">
-      <h2>Was ist dein größtes Zukunfts-Ziel gerade?</h2>
-      <p class="quiz-hint">Wähle bis zu 2.</p>
-      <div class="options" data-max="2">
-        <div class="option" data-value="karriere"><span>Beruflich wachsen</span><span class="box"></span></div>
-        <div class="option" data-value="familie"><span>Familie gründen</span><span class="box"></span></div>
-        <div class="option" data-value="reisen"><span>Die Welt sehen</span><span class="box"></span></div>
-        <div class="option" data-value="ruhe"><span>Innere Ruhe finden</span><span class="box"></span></div>
+    <div class="quiz-step" data-step="q15">
+      <h2>Was ist dir wichtiger: viele Freundschaften oder Zweisamkeit?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="freunde"><span>Ein großer, aktiver Freundeskreis</span><span class="box"></span></div>
+        <div class="option" data-value="beides2"><span>Beides gleich wichtig</span><span class="box"></span></div>
+        <div class="option" data-value="zweisamkeit"><span>Wenige, enge Menschen reichen</span><span class="box"></span></div>
       </div>
-      <div class="quiz-actions">
-        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
-        <button class="btn btn-accent" onclick="nextStep()">Fertig</button>
-      </div>
+      <div class="quiz-actions"><button class="btn btn-ghost" onclick="prevStep()">Zurück</button><button class="btn btn-accent" onclick="nextStep()">Fertig</button></div>
     </div>
 
     <div class="quiz-step" data-step="result">
       <div class="quiz-result">
-        <h2>Kern-Fragen geschafft.</h2>
+        <h2>Alle 15 Kernfragen geschafft.</h2>
         <p>Als Nächstes geht's an ein paar geführte Prompts und dein Video-Intro — dann steht dein
-          Profil. Die restlichen Vertiefungsfragen kannst du dir nach der ersten Nutzungswoche
-          freischalten.</p>
+          Profil. Nach der ersten Nutzungswoche schalten wir dir außerdem 25 optionale
+          Vertiefungsfragen frei (Intimität, Gewohnheiten, Vorlieben) — die machen deinen
+          Kompatibilitäts-Score mit der Zeit noch genauer, sind aber komplett freiwillig.</p>
         <a href="profil.html" class="btn btn-accent">Zum Profil</a>
       </div>
     </div>

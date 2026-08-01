@@ -102,3 +102,51 @@ function updateProgress() {
 }
 
 document.addEventListener('DOMContentLoaded', initQuiz);
+
+// --- Profil-Lightbox (Vollbild-Fotos mit Wisch-Navigation) ---
+const lbPhotoClasses = ['thumb-1', 'thumb-2', 'thumb-3', 'thumb-4', 'thumb-5'];
+let lbIndex = 0;
+let touchStartX = 0;
+
+function openLightbox(index) {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lbIndex = index;
+  renderLightbox();
+  lb.classList.add('open');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
+
+function lbNav(dir) {
+  lbIndex = (lbIndex + dir + lbPhotoClasses.length) % lbPhotoClasses.length;
+  renderLightbox();
+}
+
+function renderLightbox() {
+  const photo = document.getElementById('lbPhoto');
+  photo.className = 'lb-photo ' + lbPhotoClasses[lbIndex];
+  const dotsWrap = document.getElementById('lbDots');
+  dotsWrap.innerHTML = '';
+  lbPhotoClasses.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === lbIndex) dot.classList.add('active');
+    dotsWrap.appendChild(dot);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lb.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+  lb.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    if (diff > 50) lbNav(-1);
+    else if (diff < -50) lbNav(1);
+  });
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) closeLightbox();
+  });
+});

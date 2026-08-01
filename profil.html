@@ -19,20 +19,42 @@
 
 <div class="profile-shell">
   <div class="profile-card">
-    <div class="profile-photo">
-      <span class="badge">Foto 1 / 5</span>
+
+    <div class="profile-photo" data-photo-index="0" onclick="openLightbox(0)" style="cursor:pointer">
+      <span class="badge">✓ Verifiziert · Foto 1 / 5 — antippen für Vollbild</span>
       <div>
         <div class="name display">Mira, 29</div>
         <div class="loc">München · 4 km entfernt</div>
       </div>
     </div>
+
+    <div class="thumb-row">
+      <div class="thumb thumb-1" onclick="openLightbox(0)"></div>
+      <div class="thumb thumb-2" onclick="openLightbox(1)"></div>
+      <div class="thumb thumb-3" onclick="openLightbox(2)"></div>
+      <div class="thumb thumb-4" onclick="openLightbox(3)"></div>
+      <div class="thumb thumb-5" onclick="openLightbox(4)"></div>
+    </div>
+
     <div class="profile-body">
+
       <div class="profile-prompt">
         <div class="label">Prompt</div>
         <p>„Ein Abend, der wirklich nach mir schmeckt, sieht so aus … eine Runde kochen mit zu
           lauter Musik, dann auf dem Balkon über Gott und die Welt reden."</p>
       </div>
 
+      <div class="profile-prompt" style="background:transparent; border:1px solid var(--border)">
+        <div class="label">Prompt</div>
+        <p>„Worüber ich zu ernst nachdenke: ob meine Pflanzen mich wirklich mögen."</p>
+      </div>
+
+      <div class="profile-prompt" style="background:transparent; border:1px solid var(--border)">
+        <div class="label">Prompt</div>
+        <p>„Das würde ich an mir nie ändern: dass ich jede Reise mit einem viel zu vollen Koffer antrete."</p>
+      </div>
+
+      <h3 style="font-size:14px; margin:26px 0 12px;">Was ihr wichtig ist</h3>
       <div class="trait-row">
         <div class="label"><span>Tiefe Gespräche & Wachstum</span></div>
         <div class="trait-bar"><span style="width:90%"></span></div>
@@ -45,20 +67,45 @@
         <div class="label"><span>Gemeinsame Zukunftspläne</span></div>
         <div class="trait-bar"><span style="width:60%"></span></div>
       </div>
+      <div class="trait-row">
+        <div class="label"><span>Verlässliche Absprachen</span></div>
+        <div class="trait-bar"><span style="width:82%"></span></div>
+      </div>
 
+      <h3 style="font-size:14px; margin:26px 0 12px;">Interessen</h3>
       <div class="tags">
         <span class="tag">Kochen</span>
         <span class="tag">Live-Musik</span>
         <span class="tag">Reisen ohne Plan</span>
+        <span class="tag">Yoga</span>
+        <span class="tag">Lesen</span>
+        <span class="tag">Wandern</span>
       </div>
+
+      <h3 style="font-size:14px; margin:26px 0 12px;">Video-Intro</h3>
+      <div class="video-placeholder">
+        <div class="play-btn">▶</div>
+        <span>0:00 / 0:30</span>
+      </div>
+
     </div>
   </div>
 
   <p style="text-align:center; color:var(--text-muted); font-size:13px; max-width:420px; margin:28px auto 0;">
-    Das ist die Vorschau, wie dein fertiges Profil für andere aussieht. Als Nächstes: Fotos hochladen
-    und dein Video-Intro aufnehmen.
+    Das ist die Vorschau, wie dein fertiges Profil für andere aussieht. Fotos, Prompts und
+    Video-Intro sind hier Beispielinhalte für die Demo.
   </p>
 </div>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-arrow lb-prev" onclick="lbNav(-1)">‹</button>
+  <div class="lb-photo" id="lbPhoto"></div>
+  <button class="lb-arrow lb-next" onclick="lbNav(1)">›</button>
+  <div class="lb-dots" id="lbDots"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
