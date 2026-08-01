@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrieren – YouMe</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">You<span>Me</span></a>
+    <div class="nav-links">
+      <a href="login.html">Anmelden</a>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Willkommen bei YouMe</h1>
+    <p class="sub">Ein paar Angaben, dann geht's direkt zum Werte-Quiz.</p>
+
+    <form onsubmit="return handleRegisterSubmit(event)">
+      <div class="field">
+        <label for="name">Name</label>
+        <input type="text" id="name" required placeholder="Wie sollen wir dich nennen?">
+      </div>
+      <div class="field">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" required placeholder="du@beispiel.de">
+      </div>
+      <div class="field">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" required minlength="8" placeholder="Mind. 8 Zeichen">
+      </div>
+      <div class="field">
+        <label for="birthdate">Geburtsdatum</label>
+        <input type="date" id="birthdate" required>
+        <p class="error-msg">YouMe ist erst ab 18 Jahren nutzbar.</p>
+      </div>
+
+      <div class="check-row">
+        <input type="checkbox" id="acceptTerms">
+        <label for="acceptTerms">
+          Ich akzeptiere die <a href="agb.html" style="color:var(--accent)">AGB</a> und die
+          <a href="datenschutz.html" style="color:var(--accent)">Datenschutzerklärung</a>.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-accent btn-block">Weiter zum Werte-Quiz</button>
+    </form>
+
+    <p class="auth-foot">Schon dabei? <a href="login.html" style="color:var(--accent)">Anmelden</a></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

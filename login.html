@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anmelden – YouMe</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">You<span>Me</span></a>
+    <div class="nav-links">
+      <a href="registrieren.html" class="btn btn-accent">Registrieren</a>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-shell">
+  <div class="auth-card">
+    <h1>Willkommen zurück</h1>
+    <p class="sub">Schön, dass du wieder da bist.</p>
+
+    <form onsubmit="return handleLoginSubmit(event)">
+      <div class="field">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" required placeholder="du@beispiel.de">
+      </div>
+      <div class="field">
+        <label for="password">Passwort</label>
+        <input type="password" id="password" required placeholder="Dein Passwort">
+      </div>
+      <button type="submit" class="btn btn-accent btn-block">Anmelden</button>
+    </form>
+
+    <p class="auth-foot">Noch kein Konto? <a href="registrieren.html" style="color:var(--accent)">Jetzt registrieren</a></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

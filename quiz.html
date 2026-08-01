@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werte-Quiz – YouMe</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">You<span>Me</span></a>
+  </div>
+</nav>
+
+<div class="quiz-shell">
+  <div class="quiz-card">
+
+    <div class="quiz-progress-label">
+      <span>Kernfrage <span class="current">1</span> von 5</span>
+      <span>ca. 2 Min.</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill"></div></div>
+
+    <div class="quiz-step active" data-step="q1">
+      <h2>Was bringt dich in einer Beziehung am meisten zur Ruhe?</h2>
+      <p class="quiz-hint">Wähle bis zu 2.</p>
+      <div class="options" data-max="2">
+        <div class="option" data-value="stabilitaet"><span>Stabilität & Verlässlichkeit</span><span class="box"></span></div>
+        <div class="option" data-value="freiheit"><span>Freiheit & Spontaneität</span><span class="box"></span></div>
+        <div class="option" data-value="gespraeche"><span>Tiefe Gespräche & Wachstum</span><span class="box"></span></div>
+        <div class="option" data-value="humor"><span>Humor & Leichtigkeit</span><span class="box"></span></div>
+        <div class="option" data-value="zukunft"><span>Gemeinsame Zukunftspläne</span><span class="box"></span></div>
+        <div class="option" data-value="individualitaet"><span>Raum für Individualität</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions">
+        <span></span>
+        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="q2">
+      <h2>Wie gehst du am liebsten in einen Streit — und wieder raus?</h2>
+      <p class="quiz-hint">Wähle bis zu 2.</p>
+      <div class="options" data-max="2">
+        <div class="option" data-value="direkt"><span>Direkt ansprechen, sofort klären</span><span class="box"></span></div>
+        <div class="option" data-value="abstand"><span>Erst kurz Abstand, dann reden</span><span class="box"></span></div>
+        <div class="option" data-value="humor2"><span>Mit Humor die Spannung lösen</span><span class="box"></span></div>
+        <div class="option" data-value="schriftlich"><span>Gedanken erst aufschreiben</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
+        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="q3">
+      <h2>Wie sehr lädst du dich in Gesellschaft von anderen auf?</h2>
+      <p class="quiz-hint">Wähle die Aussage, die am ehesten passt.</p>
+      <div class="options" data-max="1">
+        <div class="option" data-value="allein"><span>Ich brauche viel Zeit allein</span><span class="box"></span></div>
+        <div class="option" data-value="mix"><span>Ein gesunder Mix aus beidem</span><span class="box"></span></div>
+        <div class="option" data-value="gesellschaft"><span>Ich blühe in Gesellschaft auf</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
+        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="q4">
+      <h2>Was soll dein:e Wunschpartner:in auf jeden Fall mitbringen?</h2>
+      <p class="quiz-hint">Wähle bis zu 2.</p>
+      <div class="options" data-max="2">
+        <div class="option" data-value="bodenstaendig"><span>Bodenständig & verlässlich</span><span class="box"></span></div>
+        <div class="option" data-value="abenteuerlustig"><span>Abenteuerlustig & spontan</span><span class="box"></span></div>
+        <div class="option" data-value="reflektiert"><span>Nachdenklich & reflektiert</span><span class="box"></span></div>
+        <div class="option" data-value="verspielt"><span>Verspielt & humorvoll</span><span class="box"></span></div>
+        <div class="option" data-value="zielstrebig"><span>Zielstrebig, klare Vorstellungen</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
+        <button class="btn btn-accent" onclick="nextStep()">Weiter</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="q5">
+      <h2>Was ist dein größtes Zukunfts-Ziel gerade?</h2>
+      <p class="quiz-hint">Wähle bis zu 2.</p>
+      <div class="options" data-max="2">
+        <div class="option" data-value="karriere"><span>Beruflich wachsen</span><span class="box"></span></div>
+        <div class="option" data-value="familie"><span>Familie gründen</span><span class="box"></span></div>
+        <div class="option" data-value="reisen"><span>Die Welt sehen</span><span class="box"></span></div>
+        <div class="option" data-value="ruhe"><span>Innere Ruhe finden</span><span class="box"></span></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-ghost" onclick="prevStep()">Zurück</button>
+        <button class="btn btn-accent" onclick="nextStep()">Fertig</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="result">
+      <div class="quiz-result">
+        <h2>Kern-Fragen geschafft.</h2>
+        <p>Als Nächstes geht's an ein paar geführte Prompts und dein Video-Intro — dann steht dein
+          Profil. Die restlichen Vertiefungsfragen kannst du dir nach der ersten Nutzungswoche
+          freischalten.</p>
+        <a href="profil.html" class="btn btn-accent">Zum Profil</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
